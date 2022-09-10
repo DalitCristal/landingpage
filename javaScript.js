@@ -1,7 +1,7 @@
 /* ********** Menu ********** */
 /* Función anonima autoejecutable */
 ((d) =>{
-    const $btnMenu = d.querySelector(".menu-btn"),
+    let $btnMenu = d.querySelector(".menu-btn"),
      $menu = d.querySelector(".menu");
   
     $btnMenu.addEventListener("click", (e) => {
