@@ -1,28 +1,26 @@
 /* DRY = don't repeat yourself (no te repitas)*/
 /*! Custom Properties (Propiedades personalizadas)*/
 :root {
-    --first-color: #D264B6; /* Ocupa un 60% de la página */
-    --opacity-first-color: rgba(210, 100, 182, 0.75); 
-    --second-color: #381D2A; /* Ocupa un 30% de la página */
-    --opacity-second-color: rgba(56, 29, 42, 0.75);
-    --third-color: #3E6990; /* Ocupa un 10% de la página */
-    --opacity-third-color: rgba(62, 105, 144, 0.75);
-    --white-color: #fff;
-    --opacity-white-color: rgba(255, 255, 255, 0.5);
-    --gray-light-color: #f3f3f3;
-    --gray-color: #ccc;
-    --gray-dark-color: #666;
-    --black-color: #000;
-    --opacity-black-color: rgba(0, 0, 0, 0.5);
-    --link-color: #509ee3;
-    --title-color: #333;
-    --text-color: #222;
-    --font: "Raleway", sans-serif;
-    --max-width: 1200px;
-    --header-height: 4rem; /* 1rem = 16px */
-    /* Este sitio */
-    --image: url('assets/home-image.jpg');
-    --home-image-adjunta: fixed;
+  --first-color: #293540; /* Ocupa un 60% de la página */
+  --opacity-first-color: rgba(40, 53, 63, 0.75);
+  --second-color: #d9a362; /* Ocupa un 30% de la página */
+  --opacity-second-color: rgba(216, 163, 97, 0.75);
+  --third-color: #a65f46; /* Ocupa un 10% de la página */
+  --opacity-third-color: rgba(165, 95, 69, 0.75);
+  --gray-light-color: #f3f3f3;
+  --gray-color: #ccc;
+  --gray-dark-color: #666;
+  --opacity-black-color: rgba(0, 0, 0, 0.5);
+  --link-color: #509ee3;
+  --title-color: #a65f46;
+  --subtitle-color: #bf7950;
+  --text-color: #d9985f;
+  --font: "Raleway", sans-serif;
+  --max-width: 1200px;
+  --header-height: 4rem; /* 1rem = 16px */
+  /* Este sitio */
+  --image: url("assets/home-image.jpg");
+  --home-image-adjunta: fixed;
 }
 
 /*! Reset (Resetear)*/
@@ -43,6 +41,7 @@ body {
   margin: 0;
   overflow-x: hidden; /* Esa propiedad seria... "¿Que pasa con los que desborda?, en este caso lo ocutamos(hidden)" */
   color: var(--text-color);
+  background-color: var(--first-color);
 }
 
 a {
@@ -90,7 +89,7 @@ img {
 }
 
 p {
-  line-height: 1.6;/* Este seria el interliniado de las letras en los parrafos */
+  line-height: 1.6; /* Este seria el interliniado de las letras en los parrafos */
 }
 
 /*! Components (Componentes)*/
@@ -101,9 +100,10 @@ p {
   margin: 2rem auto;
   padding: 1rem;
   max-width: 800px;
+  background-color: var(--gray-light-color);
 }
 
- .contact-form > * {
+.contact-form > * {
   padding: 0.5rem;
   margin: 1rem auto;
   display: block;
@@ -115,14 +115,16 @@ p {
   font-family: var(--font);
   border: 0;
   padding-left: 0;
-  border-bottom: thin solid var(--gray-dark-color);
+  border-bottom: thin solid var(--opacity-second-color);
+  background-color: var(--gray-light-color);
 }
 
 .contact-form textarea {
   font-size: 0.85rem;
   font-family: var(--font);
-  border: thin solid var(--gray-dark-color);
+  border: thin solid var(--opacity-second-color);
   resize: none; /* No puede modificarse el tamaño del formulario */
+  background-color: var(--gray-light-color);
 }
 
 .contact-form input[type="submit"] {
@@ -139,18 +141,20 @@ p {
   color: var(--gray-dark-color);
 }
 
-.contact-form-response {/* Cartel de gracias */
+.contact-form-response {
+  /* Cartel de gracias */
   padding: 1rem;
   width: 400px;
   text-align: center;
-  background-color: var(--white-color);
+  background-color: var(--gray-dark-color);
+  color: var(--opacity-second-color);
 }
 
 .contact-form-response svg {
   margin-top: 2rem;
   width: 4rem;
   height: 4rem;
-  fill: var(--first-color);
+  fill: var(--opacity-second-color);
 }
 
 .modal#gracias:target {
@@ -180,7 +184,6 @@ p {
   }
 }
 
-
 /* ********** HomeImage ********** */
 .home-image {
   background-image: var(--image);
@@ -202,7 +205,7 @@ p {
 
 .home-image-title {
   font-size: 6vw;
-  color: var(--white-color);
+  color: var(--gray-light-color);
 }
 
 /* ********** Menu ********** */
@@ -214,7 +217,7 @@ p {
 }
 
 .menu-btn svg {
-  fill: var(--first-color);/* Le estamos aplicando color a los svg */
+  fill: var(--first-color); /* Le estamos aplicando color a los svg */
 }
 
 .menu {
@@ -224,13 +227,14 @@ p {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: var(--second-color);
+  background-color: var(--first-color);
   opacity: 0; /* El menu de navegagacion por default va a empezar con una opacidad en 0 */
   pointer-events: none;
   transition: opacity 0.5s ease; /* Para que cuando presionemos el boton el cambio no lo haga súbitamente sino que lo haga con una pequeña transición */
 }
 
-.menu.is-active { /* Esta clase me va a permitir cambiarle la opacidad a 1 y regresarle la propiedad pointer automatico */
+.menu.is-active {
+  /* Esta clase me va a permitir cambiarle la opacidad a 1 y regresarle la propiedad pointer automatico */
   opacity: 1;
   pointer-events: auto;
 }
@@ -241,12 +245,12 @@ p {
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  color: var(--first-color);
+  color: var(--second-color);
 }
 
 .menu a:hover {
-  color: var(--white-color);
-  background-color: var(--first-color);
+  color: var(--gray-light-color);
+  background-color: var(--second-color);
 }
 
 @media screen and (min-width: 1024px) {
@@ -265,7 +269,7 @@ p {
   .menu a {
     padding: 0 1rem;
   }
-  
+
   .menu a:hover {
     background-color: transparent;
   }
@@ -305,8 +309,8 @@ p {
   fill: var(--first-color);
 }
 
- 
-.modal[id|="trabajo"]:target {/*Selector avanzado: Los corchetes en css, funcionas como selectores de atributos */
+.modal[id|="trabajo"]:target {
+  /*Selector avanzado: Los corchetes en css, funcionas como selectores de atributos */
   opacity: 1;
   pointer-events: auto;
 }
@@ -316,7 +320,8 @@ p {
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 }
 
-.btn {
+.btn,
+#btn-form {
   border-radius: 0.5rem;
   padding: 1rem;
   display: inline-block;
@@ -324,8 +329,8 @@ p {
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  color: var(--white-color);
-  background-color: var(--first-color);
+  color: var(--first-color);
+  background-color: var(--second-color);
 }
 
 .container {
@@ -341,20 +346,20 @@ p {
 .section {
   padding: 2rem 1rem;
 }
- 
+
 .section-title {
-  border-top: thin solid var(--first-color);
-  border-bottom: thin solid var(--first-color);
+  border-top: thin solid var(--second-color);
+  border-bottom: thin solid var(--second-color);
   margin: 2rem auto;
   padding: 0.5rem 1rem;
   width: 250px;
   text-align: center;
   color: var(--title-color);
 }
-/*
+
 .text-first-color {
-  color: var(--first-color);
-} */
+  color: var(--gray-light-color);
+}
 
 .text-center {
   text-align: center;
@@ -391,6 +396,12 @@ p {
 .aboutMe > article {
   margin-bottom: 2rem;
 }
+.aboutMe h1 {
+  color: var(--title-color);
+}
+.aboutMe h3 {
+  color: var(--subtitle-color);
+}
 
 .contact-card {
   margin: 1rem auto;
@@ -401,14 +412,15 @@ p {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: var(--gray-light-color);
 }
 
 .contact-card > svg {
   width: 2rem;
   height: 2rem;
-  fill: var(--first-color);
+  fill: var(--third-color);
 }
- 
+
 .contact-card > small {
   margin-top: -1rem;
 }
@@ -421,7 +433,7 @@ p {
   margin-bottom: var(--header-height);
   padding: 0.5rem;
   text-align: center;
-  color: var(--white-color);
+  color: var(--gray-light-color);
   background-color: var(--third-color);
 }
 
@@ -433,7 +445,7 @@ p {
   padding: 1rem;
   width: 100%;
   height: var(--header-height);
-  background-color: var(--second-color)
+  background-color: var(--first-color);
 }
 
 .header > .container {
@@ -443,7 +455,7 @@ p {
 }
 
 .logo a {
-  color: var(--first-color);
+  color: var(--third-color);
   font-weight: bold; /* negrita al texto */
   font-size: 2rem;
   text-decoration: none;
@@ -470,7 +482,7 @@ p {
   height: 80%;
   padding: 1rem;
   background-color: var(--opacity-first-color);
-  color: var(--white-color);
+  color: var(--gray-light-color);
   opacity: 0;
   pointer-events: none;
   transition: all 0.5s ease-in-out;
@@ -483,7 +495,7 @@ p {
 
 .portfolio-card-info > div {
   padding: 1rem;
-  border: thin solid var(--white-color);
+  border: thin solid var(--gray-light-color);
   width: 100%;
   height: 100%;
 }
@@ -493,7 +505,7 @@ p {
   max-width: 400px;
   display: flex;
   flex-direction: column;
-  background-color: var(--white-color);
+  background-color: var(--gray-light-color);
 }
 
 .portfolio-modal h3 {
@@ -508,7 +520,7 @@ p {
   height: 20rem;
   padding: 1rem;
 }
- 
+
 .portfolio-details {
   display: grid;
   grid-template-columns: 40% 60%;
@@ -527,6 +539,7 @@ p {
 .social-media svg {
   width: 1.5rem;
   height: 1.5rem;
+  fill: var(--third-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -544,7 +557,7 @@ p {
   .portfolio .section-title {
     grid-column: span 2;
   }
- 
+
   .portfolio-modal {
     max-width: 800px;
     flex-direction: row;
@@ -576,17 +589,19 @@ p {
     position: sticky; /* El posicionamiento sticky es una mezcla entre el posicionamiento relativo y el fijo, la diferencia es que se va a comportar como elemento fijo cuando llegue a la altura que se le defina sin tapar los demas elementos */
     top: 0;
     padding: 0.5rem;
-    height: calc(var(--header-height) - 0.5rem); /* A esta función calc le estamos diciendo que reste ese 0.5rem que le quitamos al padding */
+    height: calc(
+      var(--header-height) - 0.5rem
+    ); /* A esta función calc le estamos diciendo que reste ese 0.5rem que le quitamos al padding */
   }
 
   .portfolio > .container {
-    grid-template-columns: repeat(3, 1fr); /* Propiedad fracción es para pedirle que reparta el decimal que sobra para todos por igual */
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* Propiedad fracción es para pedirle que reparta el decimal que sobra para todos por igual */
   }
 
   .portfolio .section-title {
     grid-column: span 3;
   }
 }
-
-  
-
