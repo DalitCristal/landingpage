@@ -393,8 +393,16 @@ p {
 }
 
 /*! Site Styles (Estilos particulares de sitio)*/
+#acerca {
+  padding: 0;
+}
 .aboutMe > article {
   margin-bottom: 2rem;
+  padding: 2rem 1rem;
+}
+.aboutMe > .box-image {
+  margin-bottom: 0rem;
+  padding: 0rem;
 }
 .aboutMe h1 {
   color: var(--title-color);
