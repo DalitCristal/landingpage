@@ -14,9 +14,7 @@
   --link-color: #509ee3;
   --title-color: #a65f46;
   --subtitle-color: #bf7950;
-  /*   --text-color: #d9985f;
- */
-  --text-color: red;
+  --text-color: #d9985f;
   --font: "Raleway", sans-serif;
   --max-width: 1200px;
   --header-height: 4rem; /* 1rem = 16px */
