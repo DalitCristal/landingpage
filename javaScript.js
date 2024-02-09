@@ -25,7 +25,7 @@ const $response = document.querySelector(".contact-form-response");
 $form.addEventListener("submit", (e) => {
   e.preventDefault();
   $loader.classList.remove("none");
-  fetch("https://formsubmit.co/ajax/dalacristal25@gmail.com", {
+  fetch("https://formsubmit.co/ajax/27cfb1789e3174c0ca37a309e7394d38", {
     method: "POST",
     body: new FormData(e.target),
   })
