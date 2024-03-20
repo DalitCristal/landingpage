@@ -18,28 +18,13 @@ const proyectos = [
     imagen: "assets/viking-group-polaris.jpg",
     nombre: "Viking Group",
     descripcion:
-      "Creación de una página web institucional para una empresa de ventas de vehículos.",
+      "Creación de una página web institucional para empresa de ventas de vehículos.",
   },
   {
     id: "trabajo-4",
-    imagen: "assets/Project-1.jpg",
-    nombre: "Color Game",
-    descripcion:
-      "Las reglas del juego son simples. El programa mostrará un código RGB y opciones posibles para que el usuario adivine cuál es la correcta. El usuario podrá jugar en dos niveles: el fácil (con 3 colores) o el difícil (con 6). En cualquier caso, el juego le permitirá hacer click en todas las opciones hasta que dé con lacorrecta.",
-  },
-  {
-    id: "trabajo-5",
-    imagen: "assets/Project-2.jpg",
-    nombre: "To do list",
-    descripcion:
-      "En este proyecto aplicaremos todos los conceptos aprendidos hasta el momento a través de la creación de una lista de tareas (To Do List ). Comenzaremos generando la estructura con el HTML, luego agregaremos estilos con CSS y, por último, escribiremos la lógica de la aplicación web con JavaScript.",
-  },
-  {
-    id: "trabajo-6",
-    imagen: "assets/Project-3.png",
-    nombre: "Weather Channel",
-    descripcion:
-      "En este proyecto armaremos un sitio para mostrar las condiciones meteorológicas de cada ciudad. Para eso, interactuaremos con la API del Weather Channel.",
+    imagen: "assets/en-destino-viaje-turismo-receptivo-mendoza.jpg",
+    nombre: "Endestino Viajes",
+    descripcion: "Página web institucional para empresa de turismo de Mendoza.",
   },
 ];
 
