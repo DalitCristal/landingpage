@@ -527,6 +527,7 @@ p {
 .portfolio-modal img {
   width: 20rem;
   height: 20rem;
+  object-fit: cover;
   padding: 1rem;
 }
 
